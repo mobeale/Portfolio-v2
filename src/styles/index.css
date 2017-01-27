@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.__react_component_tooltip {
+  background-color: transparent !important;
+  border: none !important;
+  color: inherit !important;
+  font-size: 22px !important;
+  padding: 0px !important;
+}
+
+.__react_component_tooltip.type-dark.place-top:after{
+   border-top-color: none !important;
+ border-top-style: none !important;
+ border-top-width: none !important;
+}
+
+.__react_component_tooltip.place-top {
+    margin-top: 0px !important;
+}
+/*@media screen and (min-width: 1000px) {*/
+    /*.default h1 {*/
+      /*font-size: 8vmax;*/
+    /*}*/
+    /*.default h4 {*/
+      /*font-size: 5vmax;*/
+    /*}*/
+
+    /*.ocean h1 {*/
+      /*font-size: 5vmax;*/
+    /*}*/
+    /*.ocean h4 {*/
+      /*font-size: 2.5vmax;*/
+    /*}*/
+
+    /*.jungle h1 {*/
+      /*font-size: 5vmax;*/
+    /*}*/
+    /*.jungle h4 {*/
+      /*font-size: 2.5vmax;*/
+    /*}*/
+
+    /*.volcano h1 {*/
+      /*font-size: 5vmax;*/
+    /*}*/
+    /*.volcano h4 {*/
+      /*font-size: 2.5vmax;*/
+    /*}*/
+
+    /*.theme-btn i {*/
+      /*font-size: 2.5vmax !important;*/
+    /*}*/
+
+    /*.__react_component_tooltip {*/
+
+      /*font-size: 30px !important;*/
+
+    /*}*/
+
+    /*.custom-btn {*/
+      /*font-size: 5vmax !important;*/
+    /*}*/
+
+/*}*/
+
+
+
+.custom-btn {
+  font-size: 6vmax;
+  border-radius: 100px;
+  margin-top: 0vh;
+  margin-bottom: 1vh;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  border: none;
+  border-width: 0.4rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: transparent;
+
+}
+
+
+
+
+.theme-btn:active .btn {
+  box-shadow: none !important;
+}
+
+.theme-btn i {
+  font-size: 4vmax;
+  margin-top:1vh
+}
+
+*:focus {
+    outline: none !important;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 3px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+  margin: 20px;
+}
+.circle-lg {
+  width: 50px;
+  height: 50px;
+
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.circle-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+  margin: 25px;
+}
