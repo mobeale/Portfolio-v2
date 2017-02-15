@@ -1,7 +1,5 @@
 
 import React, { Component } from 'react';
-
-import App from './App.jsx'
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
@@ -9,17 +7,34 @@ require('isomorphic-fetch');
 class Price extends Component {
     constructor(){
         super();
-        this.state = {price: '', currency: 'GBP'}
-
+        this.state = {
+          GBPprice: '',
+          USDprice: '',
+          GBP: 'GBP',
+          USD: 'USD'
+        }
     }
 
+    retrivePrices(){
+      const GBPURL = '//api.coinbase.com/v2/prices/spot?currency=' + this.state.GBP;
+      this._interval = setInterval(() => {
+          fetch(GBPURL)
+              .then(result => result.json())
+              .then(data => this.setState({GBPprice: data.data.amount}))
+      }, 100);
+
+
+      const USDURL = '//api.coinbase.com/v2/prices/spot?currency=' + this.state.USD;
+      this._interval = setInterval(() => {
+          fetch(USDURL)
+              .then(result => result.json())
+              .then(data => this.setState({USDprice: data.data.amount}))
+      }, 100);
+    }
+
+
     componentDidMount() {
-        const URL = '//api.coinbase.com/v2/prices/spot?currency=' + this.state.currency;
-        this._interval = setInterval(() => {
-            fetch(URL)
-                .then(result => result.json())
-                .then(data => this.setState({price: data.data.amount}))
-        }, 100);
+        this.retrivePrices();
     }
 
     componentWillUnmount() {
@@ -33,9 +48,11 @@ class Price extends Component {
             <div>
                 <div className="container" style={{height: '100%'}}>
                     <div className="center-box text-center">
-                        <div className="col-sm-12 price margin-top">
-                            <i className="fa fa-bitcoin price"></i>
-                            <h1 className="">£{this.state.price}</h1>
+                        <div className="col-sm-12 price">
+                            <h1 className="">£{this.state.GBPprice}</h1>
+                        </div>
+                        <div className="col-sm-12 price">
+                            <h1 className="">${this.state.USDprice}</h1>
                         </div>
                     </div>
                 </div>

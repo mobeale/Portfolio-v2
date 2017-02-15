@@ -12,6 +12,8 @@ let Body = React.createClass({
 			return (<Name/>)}
       else if (view === 'price') {
 			return (<Price/>)}
+			else if (view === 'work') {
+			return (<Work />)}
     }
 });
 

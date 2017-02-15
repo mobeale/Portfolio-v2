@@ -1,45 +1,22 @@
 
-
-* h1, h2, h3, h4 {
+h1 {
+  font-size: 80px
 }
 
-.transition {
-}
-.theme-btn button {
-  background-color: transparent;
-}
 
- .theme-btn .btn-water:hover {
-  color: #1B98E0;
-}
-
-.theme-btn .btn-fire:hover {
-  color: #D58936;
-}
- .theme-btn .btn-earth:hover {
-  color: #96BE8C ;
-}
 
 /*-- Default --*/
 
 .default {
-  font-family: 'Open Sans';
-  color: rgb(175, 175, 175);
-  /*background-image: url(../bg/cork-wallet.png);*/
-  /*background-blend-mode: color;*/
-  /*background-repeat: repeat;*/
-  background-color: #333333;
-
+  font-family: 'VT323', monospace;
+  color: #88db0d;
+  background-color: black;
 }
 
 .clock {
   right: 2vmax ;
   top: 7px;
   position: absolute;
-}
-
-.price h1 {
-    font-size: 20vw !important;
 }
 
 .price i {
@@ -67,27 +44,9 @@
 }
 
 .margin-top {
-  margin-top: 20vh;
-}
-.center-box {
- transition: 1s ease;
+  margin-top: 30vh;
 }
 
-.default h1 {
-  font-size: 12vmax;
-}
-
-.default h2 {
-  font-size: 6vmax;
-}
-
-.default h3 {
-  font-size: 5vmax;
-}
-
-.default h4 {
-  font-size: 4vmax;
-}
 
 .full-body {
     width: 100%;
@@ -97,5 +56,3 @@
     left: 0;
     position: absolute;
 }
-
-

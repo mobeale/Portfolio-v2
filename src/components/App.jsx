@@ -9,7 +9,7 @@ let App = React.createClass({
   getInitialState: function(){
       return {
           theme: 'default',
-          view: 'price'
+          view: 'home'
       };
   },
   changeTheme: function(newTheme){

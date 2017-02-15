@@ -7,6 +7,7 @@ const Name = React.createClass({
         <div className="row">
         <div className="col-sm-12">
           <h1 className="margin-top">Mathew Beale</h1>
+          <h3>Developer</h3>
         </div>
         <div className="row">
           <div className="col-sm-12">
