@@ -8,38 +8,55 @@ class Price extends Component {
     constructor(){
         super();
         this.state = {
-          GBPprice: '',
-          USDprice: '',
+          GBPprice: 'XXX',
+          USDprice: 'XXX',
+          EURprice: 'XXX',
           GBP: 'GBP',
-          USD: 'USD'
+          USD: 'USD',
+          EUR: 'EUR'
         }
     }
 
-    retrivePrices(){
+    retriveGbpPrice(){
       const GBPURL = '//api.coinbase.com/v2/prices/spot?currency=' + this.state.GBP;
       this._interval = setInterval(() => {
           fetch(GBPURL)
               .then(result => result.json())
               .then(data => this.setState({GBPprice: data.data.amount}))
-      }, 100);
+      }, 2000);
+    }
 
-
+    retriveUsdPrice(){
       const USDURL = '//api.coinbase.com/v2/prices/spot?currency=' + this.state.USD;
       this._interval = setInterval(() => {
           fetch(USDURL)
               .then(result => result.json())
               .then(data => this.setState({USDprice: data.data.amount}))
-      }, 100);
+      }, 2000);
+    }
+
+    retriveEurPrice(){
+      const EURURL = '//api.coinbase.com/v2/prices/spot?currency=' + this.state.EUR;
+      this._interval = setInterval(() => {
+          fetch(EURURL)
+              .then(result => result.json())
+              .then(data => this.setState({EURprice: data.data.amount}))
+      }, 2000)
     }
 
 
     componentDidMount() {
-        this.retrivePrices();
+        this.retriveGbpPrice();
+        this.retriveUsdPrice();
+        this.retriveEurPrice();
     }
 
     componentWillUnmount() {
-        clearInterval(this._interval);
+        this._interval && clearInterval(this._interval);
+
     }
+
+
 
 
 
@@ -47,14 +64,15 @@ class Price extends Component {
         return (
             <div>
                 <div className="container" style={{height: '100%'}}>
+                  <div className="row">
                     <div className="center-box text-center">
-                        <div className="col-sm-12 price">
-                            <h1 className="">£{this.state.GBPprice}</h1>
-                        </div>
-                        <div className="col-sm-12 price">
-                            <h1 className="">${this.state.USDprice}</h1>
+                        <div className="col-sm-12 col-md-12 col-lg-12 price">
+                            <p className="">GBP Price: £{this.state.GBPprice}</p>
+                            <p className="">USD Price: ${this.state.USDprice}</p>
+                            <p className="">EUR Price: €{this.state.EURprice}</p>
                         </div>
                     </div>
+                  </div>
                 </div>
             </div>
         );

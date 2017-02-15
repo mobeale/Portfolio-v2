@@ -11,16 +11,16 @@ let Clock = React.createClass({
       if( hours >= 24 ){ hours -= 24; }
       if( hours < 0   ){ hours += 12; }
 
-      hours = hours + "";
+      hours += "";
       if( hours.length === 1 ){ hours = "0" + hours; }
 
-      minutes = minutes + "";
+      minutes += "";
       if( minutes.length === 1 ){ minutes = "0" + minutes; }
 
-      seconds = seconds + "";
+      seconds += "";
       if (seconds.length === 1){ seconds = "0" + seconds; }
 
-      console.log(hours, minutes)
+      
       this.setState({
       	hours: hours,
         minutes: minutes,
@@ -35,6 +35,7 @@ let Clock = React.createClass({
       this.setTime();
     }.bind(this), 1000);
   },
+
   render: function() {
 
     return(

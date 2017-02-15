@@ -70,12 +70,16 @@ body {
 
 .custom-btn {
   font-size: 40px;
-  border-radius: 100px;
+  border-radius: 2px;
+  padding-left:15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-down: 5px;
   margin-top: 0vh;
   margin-bottom: 1vh;
   margin-left: 3vw;
   margin-right: 3vw;
-  border: none;
+  border: 1px solid;
   border-width: 0.4rem;
   font-weight: 600;
   text-align: center;

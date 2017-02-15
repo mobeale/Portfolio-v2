@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import '../styles/App.css';
 import Body from './Body.jsx';
 import ReactTooltip from 'react-tooltip';
@@ -26,11 +26,13 @@ let App = React.createClass({
 
   render() {
 		return (
-				<div className={this.state.theme} style={{height: '100vh'}}>
+				<div>
+          <div className={this.state.theme}>
           <Header themeChanger={this.changeTheme} currentTheme={this.state.theme}/>
 				  <Body view={this.state.view}/>
 				  <Footer changeView={this.changeView} view={this.state.view}/>
           <ReactTooltip effect="solid"/>
+          </div>
         </div>
 		);
 	}

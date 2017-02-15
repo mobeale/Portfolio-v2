@@ -1,15 +1,35 @@
 
 h1 {
-  font-size: 80px
+  font-size: 5vw
 }
 
+h3 {
+  font-size: 2vw;
+}
 
+* {
+  letter-spacing: 3px;
+}
 
 /*-- Default --*/
 
+.work {
+margin-top: 5%;
+}
+
+.work li {
+
+  font-size: 2vw;
+  list-style-type: none;
+}
+
+.work h3 {
+  font-size: 4vw;
+}
+
 .default {
   font-family: 'VT323', monospace;
-  color: #88db0d;
+  color: #00FF00;
   background-color: black;
 }
 
@@ -19,9 +39,14 @@ h1 {
   position: absolute;
 }
 
-.price i {
+.foot i {
     text-align: center;
     font-size: 15vh;
+}
+
+.price {
+  margin-top: 10%;
+  font-size: 5vw ;
 }
 
 .default .clock p {
@@ -40,6 +65,8 @@ h1 {
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 80px;
+  margin-bottom: 10px;
   /* Set the fixed height of the footer here */
 }
 

@@ -38,15 +38,18 @@ var Footer = React.createClass({
   render(){
     return (
       <footer className="footer text-center">
-          <div className="container">
-              <button onClick={this.toggleHomeView} className="custom-btn" data-tip="home">
+          <div className="">
+              <button onClick={this.toggleHomeView} className="custom-btn" >
                 home
               </button>
-              <button onClick={this.togglePriceView} className="custom-btn" data-tip="Bitcoin Price">
+              <button onClick={this.togglePriceView} className="custom-btn">
                   bitcoin
               </button>
-              <button onClick={this.toggleWorkView} className="custom-btn" data-tip="Work">
+              <button onClick={this.toggleWorkView} className="custom-btn">
                   Work
+              </button>
+              <button onClick={this.toggleCalcView} className="custom-btn">
+                  Calculators
               </button>
           </div>
       </footer>
