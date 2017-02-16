@@ -6,20 +6,23 @@ var Highcharts = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
 import Typist from 'react-typist';
 
-
 class Price extends Component {
     constructor(){
         super();
         this.state = {
           GBP: 'GBP',
           USD: 'USD',
-          EUR: 'EUR'
+          EUR: 'EUR',
+          GBPprice: 'LOADING...',
+          USDprice: 'LOADING...',
+          EURprice: 'LOADING...'
         }
     }
 
     retriveGbpPrice(){
+
       const GBPURL = '//api.coinbase.com/v2/prices/spot?currency=' + this.state.GBP;
-      this._interval1 = setInterval(() => {
+      let GBPInterval = this._interval1 = setInterval(() => {
           fetch(GBPURL)
               .then(result => result.json())
               .then(data => this.setState({GBPprice: data.data.amount}))
@@ -28,7 +31,7 @@ class Price extends Component {
 
     retriveUsdPrice(){
       const USDURL = '//api.coinbase.com/v2/prices/spot?currency=' + this.state.USD;
-      this._interval2 = setInterval(() => {
+      let USDInterval = this._interval2 = setInterval(() => {
           fetch(USDURL)
               .then(result => result.json())
               .then(data => this.setState({USDprice: data.data.amount}))
@@ -37,7 +40,7 @@ class Price extends Component {
 
     retriveEurPrice(){
       const EURURL = '//api.coinbase.com/v2/prices/spot?currency=' + this.state.EUR;
-      this._interval3 = setInterval(() => {
+      let EURinterval = this._interval3 = setInterval(() => {
           fetch(EURURL)
               .then(result => result.json())
               .then(data => this.setState({EURprice: data.data.amount}))
@@ -94,9 +97,9 @@ series: [{
     }
 
     componentWillUnmount() {
-        clearInterval(this._interval1);
-        clearInterval(this._interval2);
-        clearInterval(this._interval3);
+        clearInterval(this.USDInterval);
+        clearInterval(this.EURinterval);
+        clearInterval(this.GBPInterval);
     }
 
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Typist from 'react-typist';
 
 var Footer = React.createClass({
 
@@ -39,6 +40,8 @@ var Footer = React.createClass({
     return (
       <footer className="footer text-center">
           <div className="">
+
+          <Typist startDelay={5500} avgTypingDelay={120}>
               <button onClick={this.toggleHomeView} className="custom-btn" >
                 home
               </button>
@@ -51,6 +54,7 @@ var Footer = React.createClass({
               <button onClick={this.toggleCalcView} className="custom-btn">
                   Calculators
               </button>
+            </Typist>
           </div>
       </footer>
     )

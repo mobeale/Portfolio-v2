@@ -18,8 +18,7 @@ margin-top: 5%;
 }
 
 .work li {
-
-  font-size: 2vw;
+  font-size: 15px;
   list-style-type: none;
 }
 
@@ -33,7 +32,6 @@ margin-top: 5%;
 }
 
 .work h3 {
-  font-size: 4vw;
 }
 
 .default {
@@ -54,17 +52,14 @@ margin-top: 5%;
 }
 
 .price {
-  margin-top: 10%;
+  margin-top: 20vh;
   font-size: 5vw ;
 }
 
 .default .clock p {
-  font-size: 8vmin !important;
+  /*font-size: 8vmin !important;*/
 }
 
-.clock p {
-  font-size: 3vmin !important;
-}
 
 .default h1,h2,h3,h4,h5, p {
     font-weight: 800 !important;
