@@ -4,15 +4,13 @@ require('es6-promise').polyfill();
 require('isomorphic-fetch');
 var Highcharts = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
+import Typist from 'react-typist';
 
 
 class Price extends Component {
     constructor(){
         super();
         this.state = {
-          GBPprice: 'LOADING...',
-          USDprice: 'LOADING...',
-          EURprice: 'LOADING...',
           GBP: 'GBP',
           USD: 'USD',
           EUR: 'EUR'
@@ -25,7 +23,7 @@ class Price extends Component {
           fetch(GBPURL)
               .then(result => result.json())
               .then(data => this.setState({GBPprice: data.data.amount}))
-      }, 2000);
+      }, 100);
     }
 
     retriveUsdPrice(){
@@ -34,7 +32,7 @@ class Price extends Component {
           fetch(USDURL)
               .then(result => result.json())
               .then(data => this.setState({USDprice: data.data.amount}))
-      }, 2000);
+      }, 100);
     }
 
     retriveEurPrice(){
@@ -43,7 +41,7 @@ class Price extends Component {
           fetch(EURURL)
               .then(result => result.json())
               .then(data => this.setState({EURprice: data.data.amount}))
-      }, 2000)
+      }, 100)
     }
 
     generateChart(){
@@ -88,7 +86,7 @@ series: [{
     }
 
 
-    componentDidMount() {
+    componentWillMount() {
         // this.generateChart();
         this.retriveGbpPrice();
         this.retriveUsdPrice();
@@ -98,9 +96,6 @@ series: [{
     componentWillUnmount() {
         clearInterval(this._interval);
     }
-
-
-
 
 
     render() {

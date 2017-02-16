@@ -1,4 +1,6 @@
 import React from 'react';
+import Typist from 'react-typist';
+
 
 const Work = React.createClass({
     render() {
@@ -6,6 +8,7 @@ const Work = React.createClass({
             <div>
                 <div className="container">
                     <div className="center-box text-center work">
+                      <Typist>
                         <div className="row">
                           <div className="col-sm-12">
                             <h3>Skills:</h3>
@@ -27,6 +30,7 @@ const Work = React.createClass({
                             <li>Quantity Surveying 2:1 - Portsmouth University</li>
                           </div>
                         </div>
+                        </Typist>
                     </div>
                 </div>
             </div>
