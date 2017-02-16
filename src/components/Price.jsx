@@ -110,6 +110,7 @@ series: [{
                   <div className="row">
                     <div className="center-box text-center">
                         <div className="col-sm-12 col-md-12 col-lg-12 price">
+                          <h1>bitcoin price</h1>
                             <p className="">GBP Price: £{this.state.GBPprice}</p>
                             <p className="">USD Price: ${this.state.USDprice}</p>
                             <p className="">EUR Price: €{this.state.EURprice}</p>
