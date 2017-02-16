@@ -19,29 +19,29 @@ class Price extends Component {
 
     retriveGbpPrice(){
       const GBPURL = '//api.coinbase.com/v2/prices/spot?currency=' + this.state.GBP;
-      this._interval = setInterval(() => {
+      this._interval1 = setInterval(() => {
           fetch(GBPURL)
               .then(result => result.json())
               .then(data => this.setState({GBPprice: data.data.amount}))
-      }, 100);
+      }, 1000);
     }
 
     retriveUsdPrice(){
       const USDURL = '//api.coinbase.com/v2/prices/spot?currency=' + this.state.USD;
-      this._interval = setInterval(() => {
+      this._interval2 = setInterval(() => {
           fetch(USDURL)
               .then(result => result.json())
               .then(data => this.setState({USDprice: data.data.amount}))
-      }, 100);
+      }, 1000);
     }
 
     retriveEurPrice(){
       const EURURL = '//api.coinbase.com/v2/prices/spot?currency=' + this.state.EUR;
-      this._interval = setInterval(() => {
+      this._interval3 = setInterval(() => {
           fetch(EURURL)
               .then(result => result.json())
               .then(data => this.setState({EURprice: data.data.amount}))
-      }, 100)
+      }, 1000)
     }
 
     generateChart(){
@@ -94,7 +94,9 @@ series: [{
     }
 
     componentWillUnmount() {
-        clearInterval(this._interval);
+        clearInterval(this._interval1);
+        clearInterval(this._interval2);
+        clearInterval(this._interval3);
     }
 
 
