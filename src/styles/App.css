@@ -23,6 +23,15 @@ margin-top: 5%;
   list-style-type: none;
 }
 
+
+.typed-name {
+  font-size: 7vw;
+}
+
+.typed-job {
+  font-size: 7vw;
+}
+
 .work h3 {
   font-size: 4vw;
 }

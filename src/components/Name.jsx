@@ -1,22 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
+var $ = require('jquery');
+import Typist from 'react-typist';
 
-const Name = React.createClass({
+class Name extends Component {
+  constructor(){
+      super();
+      this.state = {}
+  }
+
+  componentDidMount(){
+  }
+
+
   render(){
     return (
       <div className="container center-box text-center">
         <div className="row">
-        <div className="col-sm-12">
-          <h1 className="margin-top">Mathew Beale</h1>
-          <h3>Software Developer</h3>
-        </div>
-        <div className="row">
-          <div className="col-sm-12">
-          </div>
+        <div className="col-sm-12 margin-top">
+        <Typist avgTypingDelay={120} hideWhenDone={true} className='typed-name'>
+        Mathew Beale <br />
+         Software Developer
+           </Typist>
         </div>
         </div>
       </div>
     )
   }
-})
+
+}
 
 export default Name;

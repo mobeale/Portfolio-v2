@@ -2,15 +2,17 @@
 import React, { Component } from 'react';
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
+var Highcharts = require('highcharts');
+require('highcharts/modules/exporting')(Highcharts);
 
 
 class Price extends Component {
     constructor(){
         super();
         this.state = {
-          GBPprice: 'XXX',
-          USDprice: 'XXX',
-          EURprice: 'XXX',
+          GBPprice: 'LOADING...',
+          USDprice: 'LOADING...',
+          EURprice: 'LOADING...',
           GBP: 'GBP',
           USD: 'USD',
           EUR: 'EUR'
@@ -44,16 +46,57 @@ class Price extends Component {
       }, 2000)
     }
 
+    generateChart(){
+
+
+Highcharts.chart('container', {
+colors:['#00FF00'],
+
+
+chart: {
+    type: 'line',
+    backgroundColor: '#000000',
+
+},
+title: {
+    text: 'bitcoin test price'
+},
+subtitle: {
+    text: 'Test chart'
+},
+xAxis: {
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+},
+yAxis: {
+    title: {
+        text: '£'
+    }
+},
+plotOptions: {
+    line: {
+        dataLabels: {
+            enabled: true
+        },
+        enableMouseTracking: false
+    }
+},
+series: [{
+    name: 'Tokyo',
+    data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+}]
+});
+    }
+
 
     componentDidMount() {
+        // this.generateChart();
         this.retriveGbpPrice();
         this.retriveUsdPrice();
         this.retriveEurPrice();
     }
 
     componentWillUnmount() {
-        this._interval && clearInterval(this._interval);
-
+        clearInterval(this._interval);
     }
 
 
@@ -71,6 +114,7 @@ class Price extends Component {
                             <p className="">USD Price: ${this.state.USDprice}</p>
                             <p className="">EUR Price: €{this.state.EURprice}</p>
                         </div>
+                      <div id="container" style={{width: '100%', height:'300px'}}></div>
                     </div>
                   </div>
                 </div>

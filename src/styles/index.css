@@ -79,7 +79,7 @@ body {
   margin-bottom: 1vh;
   margin-left: 3vw;
   margin-right: 3vw;
-  border: 1px solid;
+  border: none;
   border-width: 0.4rem;
   font-weight: 600;
   text-align: center;
