@@ -86,7 +86,7 @@ series: [{
     }
 
 
-    componentWillMount() {
+    componentDidMount() {
         // this.generateChart();
         this.retriveGbpPrice();
         this.retriveUsdPrice();
