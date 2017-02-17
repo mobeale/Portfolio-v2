@@ -30,10 +30,13 @@ margin-top: 5%;
 }
 
 .work li {
-  font-size: 15px;
+  font-size: 3vh;
   list-style-type: none;
 }
 
+.work h3 {
+  font-size: 4vh;
+}
 
 .typed-name {
   font-size: 6vw;
@@ -43,9 +46,7 @@ margin-top: 5%;
   font-size: 6vw;
 }
 
-.work h3 {
-  font-size: 30px;
-}
+
 
 .default {
   font-family: 'VT323', monospace;
