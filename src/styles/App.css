@@ -75,6 +75,10 @@ margin-top: 5%;
   /* Set the fixed height of the footer here */
 }
 
+.footer label {
+  display: block;
+}
+
 .margin-top {
   margin-top: 30vh;
 }

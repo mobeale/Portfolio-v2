@@ -42,16 +42,24 @@ var Footer = React.createClass({
           <div className="">
 
           <Typist startDelay={5500} avgTypingDelay={120}>
+            <div className="col-xs-4">
+            {this.props.view === 'home' && <label>^</label>}
               <button onClick={this.toggleHomeView} className="custom-btn" >
                   /usr
               </button>
+              </div>
+              <div className="col-xs-4">
               <button onClick={this.togglePriceView} className="custom-btn">
                   /utils
               </button>
+            </div>
+            <div className="col-xs-4">
               <button onClick={this.toggleWorkView} className="custom-btn">
                   /cron
               </button>
-            </Typist>
+
+          </div>
+          </Typist>
           </div>
       </footer>
     )
