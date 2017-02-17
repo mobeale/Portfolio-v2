@@ -4,7 +4,6 @@ require('es6-promise').polyfill();
 require('isomorphic-fetch');
 var Highcharts = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
-import Typist from 'react-typist';
 
 class Price extends Component {
     constructor(){
@@ -97,9 +96,9 @@ series: [{
     }
 
     componentWillUnmount() {
-        clearInterval(this.USDInterval);
-        clearInterval(this.EURinterval);
-        clearInterval(this.GBPInterval);
+        clearInterval(this._interval1);
+        clearInterval(this._interval2);
+        clearInterval(this._interval3);
     }
 
 

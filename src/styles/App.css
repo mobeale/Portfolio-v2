@@ -13,6 +13,18 @@ h3 {
 
 /*-- Default --*/
 
+.Typist .Cursor--blinking {
+  opacity: 1;
+  animation: blink 0.8s linear infinite; }
+
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 .work {
 margin-top: 5%;
 }
@@ -61,7 +73,6 @@ margin-top: 5%;
   /*font-size: 8vmin !important;*/
 }
 
-
 .default h1,h2,h3,h4,h5, p {
     font-weight: 800 !important;
 }
@@ -78,7 +89,6 @@ margin-top: 5%;
 .margin-top {
   margin-top: 30vh;
 }
-
 
 .full-body {
     width: 100%;
