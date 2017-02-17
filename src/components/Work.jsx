@@ -8,7 +8,7 @@ const Work = React.createClass({
             <div>
                 <div className="container">
                     <div className="center-box text-center work">
-                      <Typist>
+                      <Typist avgTypingDelay={50} startDelay={1000} cursor={{ hideWhenDone: true, blink: true }}>
                         <div className="row">
                           <div className="col-sm-12">
                             <h3>Skills:</h3>
