@@ -58,6 +58,7 @@ margin-top: 5%;
   right: 2vmax ;
   top: 7px;
   position: absolute;
+  font-size: 2vh
 }
 
 .foot i {
@@ -70,8 +71,8 @@ margin-top: 5%;
   font-size: 5vw ;
 }
 
-.default .clock p {
-  /*font-size: 8vmin !important;*/
+.clock p {
+  font-size: 6vmin !important;
 }
 
 .default h1,h2,h3,h4,h5, p {
