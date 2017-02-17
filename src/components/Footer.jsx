@@ -40,7 +40,7 @@ var Footer = React.createClass({
     return (
       <footer className="footer text-center">
           <div className="">
-          <Typist startDelay={5500} avgTypingDelay={120} cursor={{ hideWhenDone: true, blink: true }}>
+          <Typist startDelay={6000} avgTypingDelay={120} cursor={{ hideWhenDone: true, blink: true }}>
             <div className="col-xs-4">
               <button onClick={this.toggleHomeView} className="custom-btn" >
                   /usr
