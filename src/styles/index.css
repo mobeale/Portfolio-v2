@@ -71,11 +71,9 @@ body {
 .custom-btn {
   font-size: 3vh;
   border-radius: 2px;
-  font-size: 3.5vw;
+  font-size: 5vh;
   padding-top: 5px;
-  padding-down: 5px;
   margin-top: 0vh;
-  margin-bottom: 1vh;
   border: none;
   border-width: 0.4rem;
   font-weight: 600;

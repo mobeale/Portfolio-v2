@@ -39,7 +39,7 @@ margin-top: 5%;
 }
 
 .typed-name {
-  font-size: 6vw;
+  font-size: 6vh;
 }
 
 .typed-job {
@@ -82,7 +82,6 @@ margin-top: 5%;
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 80px;
   margin-bottom: 10px;
   /* Set the fixed height of the footer here */
 }
