@@ -14,7 +14,7 @@ const Work = React.createClass({
                             <h3>Skills:</h3>
                             <li>Javascript</li>
                             <li>React & Redux</li>
-                            <li>Java (not much)</li>
+                            <li>Java</li>
                             <li>Sick soft skillz</li>
                           </div>
                         </div>

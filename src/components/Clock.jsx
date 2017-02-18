@@ -1,4 +1,6 @@
 import React from 'react';
+import Typist from 'react-typist';
+
 
 let Clock = React.createClass({
   setTime: function(){
@@ -20,7 +22,7 @@ let Clock = React.createClass({
       seconds += "";
       if (seconds.length === 1){ seconds = "0" + seconds; }
 
-      
+
       this.setState({
       	hours: hours,
         minutes: minutes,
@@ -40,7 +42,7 @@ let Clock = React.createClass({
 
     return(
       <div className="clock">
-        <p>{this.state.hours}:{this.state.minutes}:{this.state.seconds}</p>
+        <p><Typist startDelay={1500} avgTypingDelay={120} cursor={{  show: false, hideWhenDone: true, blink: true }}>{this.state.hours}:{this.state.minutes}:{this.state.seconds}</Typist></p>
       </div>
     )
   }
