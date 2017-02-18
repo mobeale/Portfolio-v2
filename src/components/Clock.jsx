@@ -42,7 +42,7 @@ let Clock = React.createClass({
 
     return(
       <div className="clock">
-        <p><Typist startDelay={1500} avgTypingDelay={120} cursor={{  show: false, hideWhenDone: true, blink: true }}>{this.state.hours}:{this.state.minutes}:{this.state.seconds}</Typist></p>
+        <p><Typist startDelay={1500} avgTypingDelay={120} cursor={{ show: false, hideWhenDoneDelay: 500, hideWhenDone: true, blink: true }}>{this.state.hours}:{this.state.minutes}:{this.state.seconds}</Typist></p>
       </div>
     )
   }
