@@ -38,7 +38,7 @@ var Footer = React.createClass({
 
  },
   render(){
-    var label = this.props.view === 'home' ? (<Typist startDelay={8000} avgTypingDelay={120} cursor={{ show: false, hideWhenDone: true, blink: true }}> <label>^</label></Typist>) : null;
+    var label = this.props.view === 'home' ? (<Typist startDelay={7500} avgTypingDelay={120} cursor={{ show: false, hideWhenDone: true, blink: true }}> <label>^</label></Typist>) : null;
     var label2 = this.props.view === 'price' ? (<label>^</label>) : null;
     var label3 = this.props.view === 'work' ? (<label>^</label>) : null;
     return (
@@ -48,19 +48,19 @@ var Footer = React.createClass({
 
             <div className="col-xs-4">
               <button onClick={this.toggleHomeView} className="custom-btn" >
-                <Typist startDelay={7500} avgTypingDelay={120} cursor={{ show: false, hideWhenDone: true, blink: true }}> /usr</Typist>
+                <Typist startDelay={7000} avgTypingDelay={120} cursor={{ show: false, hideWhenDone: true, blink: true }}> /usr</Typist>
               </button>
               {label}
               </div>
               <div className="col-xs-4">
               <button onClick={this.togglePriceView} className="custom-btn">
-                <Typist startDelay={8500} avgTypingDelay={120} cursor={{  show: false, hideWhenDone: true, blink: true }}>  /utils</Typist>
+                <Typist startDelay={8000} avgTypingDelay={120} cursor={{  show: false, hideWhenDone: true, blink: true }}>  /utils</Typist>
               </button>
               {label2}
             </div>
             <div className="col-xs-4">
               <button onClick={this.toggleWorkView} className="custom-btn">
-              <Typist startDelay={9500} avgTypingDelay={120} cursor={{  show: false, hideWhenDone: true, showCursor: false }}>  /cron</Typist>
+              <Typist startDelay={9000} avgTypingDelay={120} cursor={{  show: false, hideWhenDone: true, showCursor: false }}>  /cron</Typist>
               </button>
             {label3}
           </div>
