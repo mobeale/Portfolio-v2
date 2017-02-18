@@ -41,17 +41,22 @@ var Footer = React.createClass({
       <footer className="footer text-center">
           <div className="">
 
-          <Typist startDelay={5500} avgTypingDelay={120} cursor={{ hideWhenDone: true }}>
+            <div className="col-xs-4">
               <button onClick={this.toggleHomeView} className="custom-btn" >
-                  /usr
+                  <Typist startDelay={6500} avgTypingDelay={120} cursor={{ show:false, hideWhenDone: true, blink: true }}>/usr</Typist>
               </button>
+              </div>
+              <div className="col-xs-4">
               <button onClick={this.togglePriceView} className="custom-btn">
-                  /utils
+                <Typist startDelay={7000} avgTypingDelay={120} cursor={{ show:false, hideWhenDone: true, blink: true }}>  /utils </Typist>
               </button>
+            </div>
+            <div className="col-xs-4">
               <button onClick={this.toggleWorkView} className="custom-btn">
-                  /cron
+                <Typist startDelay={8500} avgTypingDelay={120} cursor={{ show:false, hideWhenDone: true, blink: true }}> /cron </Typist>
               </button>
-            </Typist>
+          </div>
+
           </div>
       </footer>
     )
