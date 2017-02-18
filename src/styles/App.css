@@ -71,6 +71,10 @@ margin-top: 10%;
   font-size: 5vw ;
 }
 
+.price h5 {
+  font-size: 1vh;
+}
+
 .clock p {
   font-size: 6vmin !important;
 }

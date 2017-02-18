@@ -88,11 +88,14 @@ series: [{
     }
 
 
+
+
     componentDidMount() {
         // this.generateChart();
         this.retriveGbpPrice();
         this.retriveUsdPrice();
         this.retriveEurPrice();
+        this.logTheTing();
     }
 
     componentWillUnmount() {
@@ -113,6 +116,9 @@ series: [{
                             <p className="">GBP Price: £{this.state.GBPprice}</p>
                             <p className="">USD Price: ${this.state.USDprice}</p>
                             <p className="">EUR Price: €{this.state.EURprice}</p>
+                            <br />
+                            <h5>SAFARI ERROR: COR REQUEST DENIED</h5>
+                            <h5>Add Cross Origin Request permission to Express server</h5>
                         </div>
                       <div id="container" style={{width: '100%', height:'300px'}}></div>
                     </div>
