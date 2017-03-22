@@ -17,7 +17,7 @@ const Work = React.createClass({
                             <li>Java</li>
                           </div>
                         </div>
-                        <div className="row" style={{marginTop: "20px"}}>
+                        <div className="row" style={{marginTop: "10px"}}>
                           <div className="col-sm-12">
                             <h3>Interests:</h3>
                             <li>Computing</li>
@@ -26,7 +26,7 @@ const Work = React.createClass({
                             <li>Blockchain</li>
                           </div>
                         </div>
-                        <div className="row" style={{marginTop: "20px"}}>
+                        <div className="row" style={{marginTop: "10px"}}>
                           <div className="col-sm-12">
                             <h3>Employment:</h3>
                             <li>TalentSee - Front end Developer 2015 > 2016</li>
