@@ -21,9 +21,9 @@ const Work = React.createClass({
                           <div className="col-sm-12">
                             <h3>Interests:</h3>
                             <li>Computing</li>
-                            <li>Fitness</li>
                             <li>Cryptocurrencies</li>
                             <li>Blockchain</li>
+                            <li>Chatbots</li>
                           </div>
                         </div>
                         <div className="row" style={{marginTop: "10px"}}>
