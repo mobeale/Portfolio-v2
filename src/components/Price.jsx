@@ -75,9 +75,6 @@ class Price extends Component {
     }
 
 
-
-
-
     componentDidMount() {
         // this.generateChart();
         this.retriveBtcGbpPrice();
@@ -86,6 +83,7 @@ class Price extends Component {
         this.retriveEthGbpPrice();
         this.retriveEthUsdPrice();
         this.retriveEthEurPrice();
+        this.getCharts();
 
     }
 
@@ -106,25 +104,26 @@ class Price extends Component {
                 <div className="container" style={{height: '100%'}}>
                   <div className="row">
                     <div className="center-box text-center">
-                        <div className="col-xs-6 price">
+                      <div style={{marginTop: '15vh'}}></div>
+                        <div className="col-xs-12 col-sm-6 price">
                           <h1>BTC:</h1>
                             <p className="">GBP: £{this.state.BTCGBPprice}</p>
                             <p className="">USD: ${this.state.BTCUSDprice}</p>
                             <p className="">EUR: €{this.state.BTCEURprice}</p>
                             <br />
                         </div>
-                        <div className="col-xs-6 price">
+                        <div className="col-xs-12 col-sm-6 price">
                           <h1>ETH:</h1>
                             <p className="">GBP: £{this.state.ETHGBPprice}</p>
                             <p className="">USD: ${this.state.ETHUSDprice}</p>
                             <p className="">EUR: €{this.state.ETHEURprice}</p>
                             <br />
                         </div>
-                      <div id="container" style={{width: '100%', height:'300px'}}></div>
                     </div>
                   </div>
                 </div>
             </div>
+
         );
     }
 }
