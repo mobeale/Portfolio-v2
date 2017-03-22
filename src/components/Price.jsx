@@ -9,99 +9,94 @@ class Price extends Component {
     constructor(){
         super();
         this.state = {
-          GBP: 'GBP',
-          USD: 'USD',
-          EUR: 'EUR',
-          GBPprice: 'LOADING...',
-          USDprice: 'LOADING...',
-          EURprice: 'LOADING...'
+          BTCGBPprice: 'LOADING...',
+          BTCUSDprice: 'LOADING...',
+          BTCEURprice: 'LOADING...',
+          ETHGBPprice: 'LOADING...',
+          ETHUSDprice: 'LOADING...',
+          ETHEURprice: 'LOADING...'
         }
     }
 
-    retriveGbpPrice(){
-
-      const GBPURL = '//api.coinbase.com/v2/prices/spot?currency=' + this.state.GBP;
+    // Bitcoin calls
+    retriveBtcGbpPrice(){
+      const GBPURL = 'https://api.coinbase.com/v2/prices/BTC-GBP/spot';
       let GBPInterval = this._interval1 = setInterval(() => {
           fetch(GBPURL)
               .then(result => result.json())
-              .then(data => this.setState({GBPprice: data.data.amount}))
+              .then(data => this.setState({BTCGBPprice: data.data.amount}))
       }, 1000);
     }
 
-    retriveUsdPrice(){
-      const USDURL = '//api.coinbase.com/v2/prices/spot?currency=' + this.state.USD;
+    retriveBtcUsdPrice(){
+      const USDURL = 'https://api.coinbase.com/v2/prices/BTC-USD/spot';
       let USDInterval = this._interval2 = setInterval(() => {
           fetch(USDURL)
               .then(result => result.json())
-              .then(data => this.setState({USDprice: data.data.amount}))
+              .then(data => this.setState({BTCUSDprice: data.data.amount}))
       }, 1000);
     }
 
-    retriveEurPrice(){
-      const EURURL = '//api.coinbase.com/v2/prices/spot?currency=' + this.state.EUR;
+    retriveBtcEurPrice(){
+      const EURURL = 'https://api.coinbase.com/v2/prices/BTC-EUR/spot';
       let EURinterval = this._interval3 = setInterval(() => {
           fetch(EURURL)
               .then(result => result.json())
-              .then(data => this.setState({EURprice: data.data.amount}))
+              .then(data => this.setState({BTCEURprice: data.data.amount}))
       }, 1000)
     }
 
-    generateChart(){
-
-
-Highcharts.chart('container', {
-colors:['#00FF00'],
-
-
-chart: {
-    type: 'line',
-    backgroundColor: '#000000',
-
-},
-title: {
-    text: 'bitcoin test price'
-},
-subtitle: {
-    text: 'Test chart'
-},
-xAxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-},
-yAxis: {
-    title: {
-        text: '£'
+    // Ethereum calls
+    retriveEthGbpPrice(){
+      const GBPURL = 'https://api.coinbase.com/v2/prices/ETH-GBP/spot';
+      let GBPInterval = this._interval4 = setInterval(() => {
+          fetch(GBPURL)
+              .then(result => result.json())
+              .then(data => this.setState({ETHGBPprice: data.data.amount}))
+      }, 1000);
     }
-},
-plotOptions: {
-    line: {
-        dataLabels: {
-            enabled: true
-        },
-        enableMouseTracking: false
+
+    retriveEthUsdPrice(){
+      const USDURL = 'https://api.coinbase.com/v2/prices/ETH-USD/spot';
+      let USDInterval = this._interval5 = setInterval(() => {
+          fetch(USDURL)
+              .then(result => result.json())
+              .then(data => this.setState({ETHUSDprice: data.data.amount}))
+      }, 1000);
     }
-},
-series: [{
-    name: 'Tokyo',
-    data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-}]
-});
+
+    retriveEthEurPrice(){
+      const EURURL = 'https://api.coinbase.com/v2/prices/ETH-EUR/spot';
+      let EURinterval = this._interval6 = setInterval(() => {
+          fetch(EURURL)
+              .then(result => result.json())
+              .then(data => this.setState({ETHEURprice: data.data.amount}))
+      }, 1000)
     }
+
 
 
 
 
     componentDidMount() {
         // this.generateChart();
-        this.retriveGbpPrice();
-        this.retriveUsdPrice();
-        this.retriveEurPrice();
-        this.logTheTing();
+        this.retriveBtcGbpPrice();
+        this.retriveBtcUsdPrice();
+        this.retriveBtcEurPrice();
+        this.retriveEthGbpPrice();
+        this.retriveEthUsdPrice();
+        this.retriveEthEurPrice();
+
     }
 
     componentWillUnmount() {
         clearInterval(this._interval1);
         clearInterval(this._interval2);
         clearInterval(this._interval3);
+        clearInterval(this._interval4);
+        clearInterval(this._interval5);
+        clearInterval(this._interval6);
+
     }
 
 
@@ -111,14 +106,19 @@ series: [{
                 <div className="container" style={{height: '100%'}}>
                   <div className="row">
                     <div className="center-box text-center">
-                        <div className="col-sm-12 col-md-12 col-lg-12 price">
-                          <h1>bitcoin price:</h1>
-                            <p className="">GBP Price: £{this.state.GBPprice}</p>
-                            <p className="">USD Price: ${this.state.USDprice}</p>
-                            <p className="">EUR Price: €{this.state.EURprice}</p>
+                        <div className="col-xs-6 price">
+                          <h1>BTC:</h1>
+                            <p className="">GBP: £{this.state.BTCGBPprice}</p>
+                            <p className="">USD: ${this.state.BTCUSDprice}</p>
+                            <p className="">EUR: €{this.state.BTCEURprice}</p>
                             <br />
-                            <h5>SAFARI ERROR: COR REQUEST DENIED</h5>
-                            <h5>Add Cross Origin Request permission to Express server</h5>
+                        </div>
+                        <div className="col-xs-6 price">
+                          <h1>ETH:</h1>
+                            <p className="">GBP: £{this.state.ETHGBPprice}</p>
+                            <p className="">USD: ${this.state.ETHUSDprice}</p>
+                            <p className="">EUR: €{this.state.ETHEURprice}</p>
+                            <br />
                         </div>
                       <div id="container" style={{width: '100%', height:'300px'}}></div>
                     </div>
