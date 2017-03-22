@@ -104,7 +104,7 @@ class Price extends Component {
                 <div className="container" style={{height: '100%'}}>
                   <div className="row">
                     <div className="center-box text-center">
-                      <div style={{marginTop: '15vh'}}></div>
+                      <div style={{marginTop: '10vh'}}></div>
                         <div className="col-xs-12 col-sm-6 price">
                           <h1>BTC:</h1>
                             <p className="">GBP: £{this.state.BTCGBPprice}</p>
