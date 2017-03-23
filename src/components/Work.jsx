@@ -14,7 +14,7 @@ const Work = React.createClass({
                             <h3>Skills:</h3>
                             <li>Javascript</li>
                             <li>React & Redux</li>
-                            <li>Java</li>
+                            <li>some Java</li>
                           </div>
                         </div>
                         <div className="row" style={{marginTop: "10px"}}>
