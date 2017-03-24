@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "electron": "^1.6.2",
     "react-scripts": "0.6.1"
   },
   "dependencies": {
@@ -17,10 +18,12 @@
     "react-typist": "^1.0.3",
     "typeit": "^4.3.0"
   },
+  "main": "src/electron-starter.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "electron ."
   }
 }
