@@ -29,8 +29,8 @@ const Work = React.createClass({
                         <div className="row" style={{marginTop: "10px"}}>
                           <div className="col-sm-12">
                             <h3>Employment:</h3>
-                            <li>TalentSee - Front end Developer <br/> 2015 > 2016</li>
-                            <li>Exonar - Jr Software Engineer <br/> 2016 > present</li>
+                            <li>TalentSee - Front end Developer (2015 > 2016)</li>
+                            <li>Exonar - Jr Software Engineer (2016 > present)</li>
                           </div>
                         </div>
                         </Typist>

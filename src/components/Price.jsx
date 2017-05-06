@@ -155,7 +155,7 @@ class Price extends Component {
                             <br />
                         </div>
                         <div className="col-xs-4 col-sm-4 price">
-                          <h1>LTTC:</h1>
+                          <h1>LTC:</h1>
                             <p className="">GBP: £{this.state.LTCGBPprice}</p>
                             <p className="">USD: ${this.state.LTCUSDprice}</p>
                             <p className="">EUR: €{this.state.LTCEURprice}</p>
