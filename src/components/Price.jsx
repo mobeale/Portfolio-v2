@@ -14,7 +14,10 @@ class Price extends Component {
           BTCEURprice: 'LOADING...',
           ETHGBPprice: 'LOADING...',
           ETHUSDprice: 'LOADING...',
-          ETHEURprice: 'LOADING...'
+          ETHEURprice: 'LOADING...',
+          LTCGBPprice: 'LOADING...',
+          LTCUSDprice: 'LOADING...',
+          LTCEURprice: 'LOADING...'
         }
     }
 
@@ -74,6 +77,35 @@ class Price extends Component {
       }, 1000)
     }
 
+    // Litecoin calls
+    retriveLtcGbpPrice(){
+      const GBPURL = 'https://api.coinbase.com/v2/prices/LTC-GBP/spot';
+      let GBPInterval = this._interval7 = setInterval(() => {
+          fetch(GBPURL)
+              .then(result => result.json())
+              .then(data => this.setState({LTCGBPprice: data.data.amount}))
+      }, 1000);
+    }
+
+    retriveLtcUsdPrice(){
+      const USDURL = 'https://api.coinbase.com/v2/prices/LTC-USD/spot';
+      let USDInterval = this._interval8 = setInterval(() => {
+          fetch(USDURL)
+              .then(result => result.json())
+              .then(data => this.setState({LTCUSDprice: data.data.amount}))
+      }, 1000);
+    }
+
+    retriveLtcEurPrice(){
+      const EURURL = 'https://api.coinbase.com/v2/prices/LTC-EUR/spot';
+      let EURinterval = this._interval9 = setInterval(() => {
+          fetch(EURURL)
+              .then(result => result.json())
+              .then(data => this.setState({LTCEURprice: data.data.amount}))
+      }, 1000)
+    }
+
+
 
     componentDidMount() {
         // this.generateChart();
@@ -83,6 +115,9 @@ class Price extends Component {
         this.retriveEthGbpPrice();
         this.retriveEthUsdPrice();
         this.retriveEthEurPrice();
+        this.retriveLtcGbpPrice();
+        this.retriveLtcUsdPrice();
+        this.retriveLtcEurPrice();
         this.getCharts();
 
     }
@@ -105,18 +140,25 @@ class Price extends Component {
                   <div className="row">
                     <div className="center-box text-center">
                       <div style={{marginTop: '10vh'}}></div>
-                        <div className="col-xs-12 col-sm-6 price">
+                        <div className="col-xs-4 col-sm-4 price">
                           <h1>BTC:</h1>
                             <p className="">GBP: £{this.state.BTCGBPprice}</p>
                             <p className="">USD: ${this.state.BTCUSDprice}</p>
                             <p className="">EUR: €{this.state.BTCEURprice}</p>
                             <br />
                         </div>
-                        <div className="col-xs-12 col-sm-6 price">
+                        <div className="col-xs-4 col-sm-4 price">
                           <h1>ETH:</h1>
                             <p className="">GBP: £{this.state.ETHGBPprice}</p>
                             <p className="">USD: ${this.state.ETHUSDprice}</p>
                             <p className="">EUR: €{this.state.ETHEURprice}</p>
+                            <br />
+                        </div>
+                        <div className="col-xs-4 col-sm-4 price">
+                          <h1>LTTC:</h1>
+                            <p className="">GBP: £{this.state.LTCGBPprice}</p>
+                            <p className="">USD: ${this.state.LTCUSDprice}</p>
+                            <p className="">EUR: €{this.state.LTCEURprice}</p>
                             <br />
                         </div>
                     </div>
