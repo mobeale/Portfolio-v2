@@ -17,7 +17,7 @@ class Name extends Component {
                         <Typist avgTypingDelay={120} startDelay={2500} cursor={{hideWhenDone: true, blink: true}} className='typed-name'>
                             Mathew Beale
                             <br/>
-                            Jr Developer
+                            Developer
                         </Typist>
 
                     </div>
