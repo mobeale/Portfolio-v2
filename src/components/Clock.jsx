@@ -5,9 +5,9 @@ import Typist from 'react-typist';
 let Clock = React.createClass({
   setTime: function(){
   	let currentdate = new Date();
-  	let hours = currentdate.getUTCHours();
-    let minutes = currentdate.getUTCMinutes();
-    let seconds = currentdate.getUTCSeconds();
+  	let hours = currentdate.getHours();
+    let minutes = currentdate.getMinutes();
+    let seconds = currentdate.getSeconds();
       // correct for number over 24, and negatives
 
       if( hours >= 24 ){ hours -= 24; }
